@@ -19,7 +19,7 @@ When generating values between an interval, it can be helpful to use a smoothing
 The smoothing function used here is a 5th order polynomial of the form:
 
 <p align="center">
-  <img alt="s(x) = (6x^5)-(15x^4)+(10x^3)" src="docs/quintic.png">
+  <img alt="s(x) = 6x^5 - 15x^4 + 10x^3" src="docs/quintic.png">
 </p>
 
 ## examples
@@ -42,7 +42,7 @@ const smoothed = inputs.map(x => smooth(x));
 Your output values will fall along the following curve:
 
 <p align="center">
-  <img alt="graph of s(x) = (6x^5)-(15x^4)+(10x^3)" src="docs/quintic_graph.png">
+  <img alt="graph of s(x) = 6x^5 - 15x^4 + 10x^3" src="docs/quintic_graph.png">
 </p>
 
 #### understanding smoothing
@@ -55,7 +55,7 @@ A derivative is just a fancy way to say "slope" at some point in our function. F
 
 
 <p align="center">
-  <img alt="s'(x) = (30x^4)-(60x^3)+(30x^2)" src="docs/quintic_diff.png">
+  <img alt="s'(x) = 30x^4 - 60x^3 + 30x^2" src="docs/quintic_diff.png">
 </p>
 
 We want to ask ourselves whether or not the smoothing function will squeeze or stretch our input values at a certain point. All we need to do is plug our point into the derivative above. For example, plugging in the point `x = .1` tells us that the derivative is `s'(.1) = .243`, meaning it grows roughly four times slower than `f(x) = x` at the same point (hence, squeezing). If we input `x = .5`, we'll find that the derivative is `s'(.5) = 1.875`, which means it grows almost twice as fast in the center as `f(x) = x` (hence, stretching).
@@ -63,7 +63,7 @@ We want to ask ourselves whether or not the smoothing function will squeeze or s
 #### derivative visualized
 
 <p align="center">
-  <img alt="graph of s'(x) = (30x^4)-(60x^3)+(30x^2)" src="docs/quintic_diff_graph.png">
+  <img alt="graph of s'(x) = 30x^4 - 60x^3 + 30x^2" src="docs/quintic_diff_graph.png">
 </p>
 
 Another interesting property of smoothing functions is that they tend to have *even* derivatives around the center of the input interval, meaning that values will be smoothed symmetrically around the middle (`x = .5`, in this case). If you transform coordinates of the smoothing function such that `a = x - .5`, you'll find that the derivative of the result is even, or that s'(a) = s'(-a).
