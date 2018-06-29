@@ -1,1 +1,1 @@
-console.log("Hello from atlas-quintic-smoothing!")
+module.exports = x => x*x*x*(x*(x*6-15)+10)
