@@ -6,8 +6,8 @@ describe("quintic smoothing function", function(){
   it("should be 0 at x = 0", function(){
     expect(smooth(0)).to.equal(0)
   })
-  it("should be 2^6/3^4 at x = 2/3", function(){
-    expect(smooth(2/3)).to.be.closeTo(Math.pow(2,6)/Math.pow(3,4), 1e-15)
+  it("should be 1/2 at x = 1/2", function(){
+    expect(smooth(1/2)).to.equal(1/2)
   })
   it("should be 1 at x = 1", function(){
     expect(smooth(1)).to.equal(1)
