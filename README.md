@@ -26,7 +26,7 @@ The smoothing function used here is a 5th order polynomial of the form:
 
 #### using smoothing
 
-```
+```javascript
 const smooth = require("atlas-quintic-smoothing");
 
 // create a vector of input values
